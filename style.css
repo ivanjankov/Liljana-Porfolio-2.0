@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: "Poppins", "sans-serif";
-  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/poppins/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -21,14 +21,21 @@
 }
 @font-face {
   font-family: "Poppins", "sans-serif";
-  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins", "sans-serif";
+  src: url("../../assets/fonts/poppins/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Poppins", "sans-serif";
-  src: url("../../assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -110,11 +117,77 @@ h6 {
   isolation: isolate;
 }
 
-.main-header {
-  font-family: "Poppins", "sans-serif";
-  font-size: 2.875rem;
-  color: hsl(0, 0%, 20%);
-  font-weight: 700;
+a {
+  text-decoration: none;
+}
+
+.main {
+  padding-inline: calc((100vw - 978px) / 2);
+}
+
+.button {
+  background-color: transparent;
+  padding: 8px 24px;
+  outline: 0;
+  border: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.header__logo-img {
+  line-height: 0;
+  height: 40px;
+  width: auto;
+  padding: 8px;
+}
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  padding: 8px 0;
+}
+.header__menu-item {
+  font-size: 1.125rem;
+}
+.header__menu-item-link {
+  display: inline-block;
+  border-bottom: 1px solid #333333;
+  padding: 12px 16px;
+  color: #333333;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header__menu-item-link:hover {
+  color: #ff5f42;
+  transition: color 0.2s ease;
+}
+.header__menu-item-link.active {
+  color: #ff5f42;
+  border-bottom: 3px solid #ff5f42;
+}
+.header__button {
+  border: 1px solid #e56e00;
+  background-color: #e56e00;
+  border-radius: 40px;
+}
+.header__button:hover {
+  background-color: #ff4e2e;
+  transition: background-color 0.4s ease-in;
+}
+.header__button-link {
+  font-weight: 600;
+  color: #ffe5b8;
+  font-size: 1.125rem;
 }
 
 /*# sourceMappingURL=style.css.map */
