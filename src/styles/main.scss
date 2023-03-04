@@ -1,1 +1,10 @@
-@use 'foundation/variables.scss' as *;
+@use 'foundation/_variables.scss' as *;
+@use 'foundation/typography' as *;
+@import './foundation/reset';
+
+.main-header {
+    font-family: $font-secondary;
+    font-size: $text-xl;
+    color: $text-primary;
+    font-weight: 700;
+}
