@@ -1,10 +1,74 @@
 @use 'foundation/_variables.scss' as *;
 @use 'foundation/typography' as *;
 @import './foundation/reset';
+@import './foundation/mixins';
 
-.main-header {
-    font-family: $font-secondary;
-    font-size: $text-xl;
-    color: $text-primary;
-    font-weight: 700;
+.main {
+    padding-inline: calc((100vw - $container-width) / 2);
+}
+
+.button {
+    background-color: transparent;
+    padding: $padding-s $padding-xxl;
+    outline: 0;
+    border: none;
+}
+
+.header {
+    @include flex(row, space-between, center, $gap: null);
+    padding: $padding-xl 0;
+    &__logo {
+        &-img {
+            line-height: 0;
+            height: $xl-space;
+            width: auto;
+            padding: $padding-s;
+        }
+    }
+
+    &__menu {
+        @include flex(row, center, center);
+        list-style: none;
+        padding: $padding-s 0;
+
+        &-item {
+            font-size: $text-md;
+
+            &-link {
+                display: inline-block;
+                border-bottom: 1px solid $text-primary;
+                padding: $padding-m $padding-l;
+                color: $text-primary;
+                font-weight: $weight-semibold;
+                cursor: pointer;
+
+                &:hover {
+                    color: $secondary;
+                    transition: color 0.2s ease;
+                }
+
+                &.active {
+                    color: $secondary;
+                    border-bottom: 3px solid $secondary;
+                }
+            }
+        }
+    }
+
+    &__button {
+        border: 1px solid $secondary-300;
+        background-color: $secondary-300;
+        border-radius: 40px;
+
+        &:hover {
+            background-color: #ff4e2e;
+            transition: background-color 0.4s ease-in;
+        }
+
+        &-link {
+            font-weight: $weight-semibold;
+            color: $primary;
+            font-size: $text-md;
+        }
+    }
 }

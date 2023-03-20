@@ -1,24 +1,47 @@
 // Colors
 
-$primary: hsl(38, 100%, 86%);
-$secondary: hsl(9, 100%, 63%);
-$text-primary: hsl(0, 0%, 20%);
-$white: hsl(0, 0%, 100%);
+$primary: #ffe5b8;
+$secondary: #ff5f42;
+$secondary-300: #e56e00;
+$text-primary: #333333;
+$white: #ffffff;
 
 // font size
 
 $text-sm: 0.8125rem;
-$text-base: 1rem;
-$text-md: 1.125rem;
-$text-lg: 1.375rem;
+$text-base: 1rem; // 16px
+$text-md: 1.125rem; // 18px
+$text-lg: 1.375rem; // 22px
 $text-xl: 1.75rem;
 $text-xl: 2.875rem;
 
 // spacing
 
+$xxs-space: 4px;
+$xs-space: 8px;
+$s-space: 16px;
+$m-space: 24px;
+$l-space: 32px;
+$xl-space: 40px;
+$xxl-space: 56px;
+
+// Paddings
+
+$padding-xs: 4px;
+$padding-s: 8px;
+$padding-m: 12px;
+$padding-l: 16px;
+$padding-xl: 20px;
+$padding-xxl: 24px;
+
 // font-weight
 
 $weight-light: 300;
 $weight-normal: 400;
+$weight-medium: 500;
 $weight-semibold: 600;
 $weight-bold: 700;
+
+// Width
+
+$container-width: 978px;
