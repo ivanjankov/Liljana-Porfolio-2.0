@@ -5,4 +5,11 @@
     align-items: $ai;
     flex-wrap: $fw;
     gap: $gap;
-} ;
+}
+// NOTE: Enhance this and replace it everywhere grid is used
+@mixin grid($gtc, $gtr, $ai) {
+    display: grid;
+    grid-template-columns: $gtc;
+    grid-template-rows: $gtr;
+    align-items: $ai;
+}
