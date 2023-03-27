@@ -6,6 +6,15 @@
     flex-wrap: $fw;
     gap: $gap;
 }
+
+@mixin font($ff, $fs, $fw, $lh) {
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    font-style: normal;
+}
+
 // NOTE: Enhance this and replace it everywhere grid is used
 @mixin grid($gtc, $gtr, $ai) {
     display: grid;

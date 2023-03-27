@@ -5,6 +5,7 @@
 
 .main {
     padding-inline: calc((100vw - $container-width) / 2);
+    font-family: $font-secondary;
 }
 
 .button {
@@ -16,14 +17,28 @@
 
 .hero {
     @include flex(column, space-between, center, $gap: null);
+    position: relative;
     height: $vh-full;
     background-color: $primary;
+
+    &:after {
+        position: absolute;
+        content: '';
+        background: url('src/assets/img/wave.png') no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100px;
+        left: 0;
+        bottom: -70px;
+    }
 
     &__section {
         @include grid(1fr 2fr, null, center);
 
         &-text {
             font-size: $hero-text;
+            font-family: $font-primary;
+            font-weight: 500;
         }
 
         &-image {
@@ -97,6 +112,65 @@
         &-link:hover {
             background-color: #ff4e2e;
             transition: background-color 0.4s ease-in;
+        }
+    }
+}
+
+.section {
+    margin-top: 72px;
+
+    &__heading {
+        font-family: $font-secondary;
+        &-subtitle {
+            @include font($font-secondary, 46px, $weight-semibold, 1.5);
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        &-duck {
+            text-align: center;
+            font-size: $text-base;
+        }
+    }
+}
+
+.projects {
+    @include grid(repeat(3, 1fr), auto, center);
+    column-gap: 40px;
+    margin-block: 40px;
+
+    &__item {
+        @include grid(repeat(2, 1fr), auto, start);
+
+        &:hover {
+            &-heading {
+            }
+        }
+
+        &-figure {
+            & > img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        &-heading {
+            font-family: $font-secondary;
+            padding: $padding-xxl $padding-l;
+            height: 100%;
+            background: url('./src/assets/img/projects-bg.png') no-repeat;
+            background-size: 100% 100%;
+            .project-sm-title {
+                font-size: $text-sm;
+                color: $secondary-300;
+            }
+
+            .project-lg-title {
+                font-size: $text-lg;
+                font-weight: $weight-semibold;
+                color: #fff;
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;500&family=Poppins&display=swap");
 @font-face {
   font-family: "Chaviera Pro";
   src: url("../../assets/fonts/ChavieraProRegular.ttf") format("truetype");
@@ -86,6 +87,10 @@ svg {
   max-width: 100%;
 }
 
+img {
+  width: 100%;
+}
+
 /*
     7. Remove built-in form typography styles
   */
@@ -123,6 +128,7 @@ a {
 
 .main {
   padding-inline: calc((100vw - 978px) / 2);
+  font-family: "Poppins", "sans-serif";
 }
 
 .button {
@@ -138,8 +144,19 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
   height: 100vh;
   background-color: #ffe5b8;
+}
+.hero:after {
+  position: absolute;
+  content: "";
+  background: url("src/assets/img/wave.png") no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  bottom: -70px;
 }
 .hero__section {
   display: grid;
@@ -148,6 +165,8 @@ a {
 }
 .hero__section-text {
   font-size: 62px;
+  font-family: "Merienda", "cursive";
+  font-weight: 500;
 }
 .hero__section-image {
   max-height: 100%;
@@ -222,6 +241,62 @@ a {
 .header__button-link:hover {
   background-color: #ff4e2e;
   transition: background-color 0.4s ease-in;
+}
+
+.section {
+  margin-top: 72px;
+}
+.section__heading {
+  font-family: "Poppins", "sans-serif";
+}
+.section__heading-subtitle {
+  font-family: "Poppins", "sans-serif";
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.5;
+  font-style: normal;
+  text-transform: capitalize;
+  text-align: center;
+}
+.section__heading-duck {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  column-gap: 40px;
+  margin-block: 40px;
+}
+.projects__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: start;
+}
+.projects__item-figure > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.projects__item-heading {
+  font-family: "Poppins", "sans-serif";
+  padding: 24px 16px;
+  height: 100%;
+  background: url("./src/assets/img/projects-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.projects__item-heading .project-sm-title {
+  font-size: 0.8125rem;
+  color: #e56e00;
+}
+.projects__item-heading .project-lg-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
