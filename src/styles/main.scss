@@ -22,12 +22,7 @@
     background-color: $primary;
 
     &:after {
-        position: absolute;
-        content: '';
-        background: url('src/assets/img/wave.png') no-repeat;
-        background-size: contain;
-        width: 100%;
-        height: 100px;
+        @include wave;
         left: 0;
         bottom: -70px;
     }
@@ -117,10 +112,11 @@
 }
 
 .section {
-    margin-top: 72px;
+    margin: 72px 0;
 
     &__heading {
         font-family: $font-secondary;
+        margin-bottom: 32px;
         &-subtitle {
             @include font($font-secondary, 46px, $weight-semibold, 1.5);
             text-transform: capitalize;
@@ -133,7 +129,6 @@
         }
     }
 }
-
 .projects {
     @include grid(repeat(3, 1fr), auto, center);
     column-gap: 40px;
@@ -141,11 +136,6 @@
 
     &__item {
         @include grid(repeat(2, 1fr), auto, start);
-
-        &:hover {
-            &-heading {
-            }
-        }
 
         &-figure {
             & > img {
@@ -172,5 +162,52 @@
                 color: #fff;
             }
         }
+    }
+}
+
+.services {
+    position: relative;
+    margin: 40px 0;
+    padding: 40px 0;
+    background-color: $primary;
+
+    &:after {
+        @include wave;
+        left: 0;
+        bottom: -70px;
+    }
+
+    &:before {
+        @include wave;
+        top: -70px;
+        transform: rotate(180deg);
+    }
+}
+
+.section__service {
+    @include flex(column, center, center, wrap, $xxs-space);
+    margin-bottom: $s-space;
+    padding: $padding-l 0;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: $font-secondary;
+
+    &-title {
+        font-size: $text-xl;
+        font-weight: $weight-semibold;
+        line-height: 1.3;
+    }
+
+    &-description {
+        font-weight: normal;
+        font-size: $text-base;
+        line-height: 1.3;
+    }
+
+    &:hover {
+        background-color: #323232;
+        transition: background-color 0.3s ease-in;
+        color: #fff;
+        cursor: pointer;
     }
 }
