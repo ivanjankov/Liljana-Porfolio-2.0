@@ -5,6 +5,7 @@ $secondary: #ff5f42;
 $secondary-300: #e56e00;
 $text-primary: #333333;
 $white: #ffffff;
+$tertiary: #0f0f0f;
 
 // font size
 
@@ -12,9 +13,9 @@ $text-sm: 0.8125rem;
 $text-base: 1rem; // 16px
 $text-md: 1.125rem; // 18px
 $text-lg: 1.375rem; // 22px
-$text-xl: 1.75rem;
-$text-xl: 2.875rem;
-$hero-text: 62px;
+$text-xl: 1.75rem; // 28px
+$text-xxl: 2.875rem; // 46px
+$hero-text: 3.875rem; // 62px
 
 // spacing
 
@@ -46,6 +47,7 @@ $weight-bold: 700;
 // Width
 
 $container-width: 978px;
+$testimonial-width: 600px;
 
 // Logo
 

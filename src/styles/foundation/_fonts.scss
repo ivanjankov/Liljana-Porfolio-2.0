@@ -1,56 +1,15 @@
 @use './variables' as *;
 
 // Font faces
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 // Chaviera Pro
-// !!! IMPORTANT (Font is not working)
-
 @font-face {
-    font-family: 'Chaviera Pro';
-    src: url('../../assets/fonts/ChavieraProRegular.ttf') format('truetype');
-    font-weight: 400;
+    font-family: 'chavierabold';
+    src: url('./src/assets/fonts/chavierapro/chavieraprobold-rpmye-webfont.woff2')
+            format('woff2'),
+        url('./src/assets/fonts/chavierapro/chavieraprobold-rpmye-webfont.woff')
+            format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-display: swap;
-}
-
-// Poppins
-@font-face {
-    font-family: 'Poppins', 'sans-serif';
-    src: url('../../assets/fonts/poppins/Poppins-Light.ttf') format('truetype');
-    font-weight: $weight-light;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Poppins', 'sans-serif';
-    src: url('../../assets/fonts/poppins/Poppins-Regular.ttf')
-        format('truetype');
-    font-weight: $weight-normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Poppins', 'sans-serif';
-    src: url('../../assets/fonts/poppins/Poppins-Medium.ttf') format('truetype');
-    font-weight: $weight-medium;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Poppins', 'sans-serif';
-    src: url('../../assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
-    font-weight: $weight-bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Poppins', 'sans-serif';
-    src: url('../../assets/fonts/poppins/Poppins-SemiBold.ttf')
-        format('truetype');
-    font-weight: $weight-semibold;
-    font-style: normal;
-    font-display: swap;
 }
