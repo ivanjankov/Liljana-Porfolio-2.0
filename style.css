@@ -92,13 +92,12 @@ a {
 }
 
 .main {
-  padding-inline: calc((100vw - 978px) / 2);
   font-family: "Poppins", "sans-serif";
 }
 
 .container {
   max-width: 978px;
-  margin: 72px auto;
+  margin: 0 auto;
 }
 
 .button {
@@ -109,41 +108,45 @@ a {
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   position: relative;
-  height: 100vh;
+  height: 90vh;
   background-color: #ffe5b8;
+  max-height: 100%;
 }
 .hero:after {
   position: absolute;
   content: "";
   background: url("src/assets/img/wave.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   width: 100%;
   height: 100px;
   left: 0;
   bottom: -70px;
 }
 .hero__section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 .hero__section-text {
+  flex: 1 2 40%;
   font-size: 3.875rem;
   font-family: "chavierabold";
   font-weight: 500;
 }
 .hero__section-image {
-  max-height: 100%;
+  flex: 1 1 60%;
+  overflow: hidden;
+  height: 100%;
+  width: auto;
 }
 .hero__section-image-element {
   height: auto;
   width: 100%;
+  object-fit: cover;
 }
 
 .header {
@@ -213,6 +216,9 @@ a {
   transition: background-color 0.4s ease-in;
 }
 
+.section {
+  margin: 100px auto;
+}
 .section__heading {
   font-family: "Poppins", "sans-serif";
   margin-bottom: 32px;
@@ -234,7 +240,7 @@ a {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 100px;
   align-items: center;
   column-gap: 40px;
   margin-block: 40px;
@@ -244,11 +250,12 @@ a {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   align-items: start;
+  max-height: 100%;
 }
 .projects__item-figure > img {
   height: 100%;
-  object-fit: cover;
   width: 100%;
+  object-fit: cover;
 }
 .projects__item-heading {
   font-family: "Poppins", "sans-serif";
@@ -277,7 +284,7 @@ a {
   position: absolute;
   content: "";
   background: url("src/assets/img/wave.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   width: 100%;
   height: 100px;
   left: 0;
@@ -287,7 +294,7 @@ a {
   position: absolute;
   content: "";
   background: url("src/assets/img/wave.png") no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   width: 100%;
   height: 100px;
   top: -70px;

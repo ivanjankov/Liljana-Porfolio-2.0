@@ -4,13 +4,13 @@
 @import './foundation/mixins';
 
 .main {
-    padding-inline: calc((100vw - $container-width) / 2);
+    // padding-inline: calc((100vw - $container-width) / 2);
     font-family: $font-secondary;
 }
 
 .container {
     max-width: $container-width;
-    margin: 72px auto;
+    margin: 0 auto;
 }
 
 .button {
@@ -21,10 +21,10 @@
 }
 
 .hero {
-    @include flex(column, space-between, center, $gap: null);
     position: relative;
-    height: $vh-full;
+    height: 90vh;
     background-color: $primary;
+    max-height: 100%;
 
     &:after {
         @include wave;
@@ -33,19 +33,27 @@
     }
 
     &__section {
-        @include grid(1fr 2fr, null, center);
+        @include flex(row, center, center, null, null);
+        justify-content: center;
+        height: 70vh;
 
         &-text {
+            flex: 1 2 40%;
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
         }
 
         &-image {
-            max-height: 100%;
+            flex: 1 1 60%;
+            overflow: hidden;
+            height: 100%;
+            width: auto;
+
             &-element {
                 height: auto;
                 width: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -117,7 +125,7 @@
 }
 
 .section {
-    // margin: 72px 0;
+    margin: 100px auto;
 
     &__heading {
         font-family: $font-secondary;
@@ -135,18 +143,19 @@
     }
 }
 .projects {
-    @include grid(repeat(3, 1fr), auto, center);
+    @include grid(repeat(3, 1fr), 100px, center);
     column-gap: 40px;
     margin-block: 40px;
 
     &__item {
         @include grid(repeat(2, 1fr), auto, start);
+        max-height: 100%;
 
         &-figure {
             & > img {
                 height: 100%;
-                object-fit: cover;
                 width: 100%;
+                object-fit: cover;
             }
         }
 
