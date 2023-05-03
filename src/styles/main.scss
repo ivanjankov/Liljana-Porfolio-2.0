@@ -2,6 +2,7 @@
 @use 'foundation/typography' as *;
 @import './foundation/reset';
 @import './foundation/mixins';
+@import './foundation/projects';
 
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);
@@ -128,7 +129,6 @@
     margin: 100px auto;
     padding: 100px 0;
 
-
     &__heading {
         font-family: $font-secondary;
         margin-bottom: 32px;
@@ -169,6 +169,7 @@
             height: 100%;
             background: url('./src/assets/img/projects-bg.png') no-repeat;
             background-size: 100% 100%;
+
             .project-sm-title {
                 font-size: $text-sm;
                 color: $secondary-300;
