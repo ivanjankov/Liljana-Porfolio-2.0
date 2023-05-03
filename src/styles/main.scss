@@ -128,6 +128,7 @@
     margin: 100px auto;
     padding: 100px 0;
 
+
     &__heading {
         font-family: $font-secondary;
         margin-bottom: 32px;
@@ -157,8 +158,8 @@
             width: 100%;
             & > img {
                 height: 100%;
-                object-fit: cover;
                 width: 100%;
+                object-fit: cover;
             }
         }
 

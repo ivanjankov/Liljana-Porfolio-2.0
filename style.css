@@ -256,11 +256,12 @@ a {
 .projects__item-figure {
   height: 100%;
   width: 100%;
+
 }
 .projects__item-figure > img {
   height: 100%;
-  object-fit: cover;
   width: 100%;
+  object-fit: cover;
 }
 .projects__item-heading {
   font-family: "Poppins", "sans-serif";
