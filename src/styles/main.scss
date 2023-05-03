@@ -27,7 +27,7 @@
     max-height: 100%;
 
     &:after {
-        @include wave;
+        @include wave('wave');
         left: 0;
         bottom: -70px;
     }
@@ -126,6 +126,8 @@
 
 .section {
     margin: 100px auto;
+    padding: 100px 0;
+
 
     &__heading {
         font-family: $font-secondary;
@@ -143,15 +145,17 @@
     }
 }
 .projects {
-    @include grid(repeat(3, 1fr), 100px, center);
+    @include grid(repeat(3, 1fr), 250px, center);
     column-gap: 40px;
     margin-block: 40px;
 
     &__item {
         @include grid(repeat(2, 1fr), auto, start);
-        max-height: 100%;
+        height: 100%;
 
         &-figure {
+            height: 100%;
+            width: 100%;
             & > img {
                 height: 100%;
                 width: 100%;
@@ -182,17 +186,17 @@
 .services {
     position: relative;
     margin: 40px 0;
-    padding: 40px 0;
+    padding: 40px 0 150px;
     background-color: $primary;
 
     &:after {
-        @include wave;
+        @include wave('wave');
         left: 0;
         bottom: -70px;
     }
 
     &:before {
-        @include wave;
+        @include wave('wave');
         top: -70px;
         transform: rotate(180deg);
     }
@@ -231,9 +235,14 @@
     margin: $l-space 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
     // remove this when wave is implemented
-    padding-top: $l-space;
+    // padding-top: $l-space;
     background-color: $tertiary;
     width: 100%;
+
+    &::before {
+        @include wave('wave-black');
+        top: -100px;
+    }
 
     &__heading {
         margin-bottom: $l-space;
