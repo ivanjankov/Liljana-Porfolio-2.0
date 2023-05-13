@@ -51,10 +51,13 @@
 }
 
 .content {
+    // check if the rows will work with all the projects, might need to come up with different solution
+
     @include grid(repeat(2, 1fr), repeat(6, auto), center);
     gap: $l-space;
     width: 1200px;
     margin: 0 auto;
+    padding: 0px;
 
     .image-single {
         grid-column: 1/-1;
@@ -62,6 +65,11 @@
 
     .image-split {
         grid-column: auto / span 1;
+
+        &_horizontal {
+            @include grid(1fr, repeat(2, 1fr), center);
+            row-gap: $l-space;
+        }
     }
 
     &__image {
