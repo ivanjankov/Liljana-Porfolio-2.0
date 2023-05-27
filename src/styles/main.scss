@@ -66,6 +66,7 @@
 
     &__logo {
         flex: 1 1 25%;
+        @include flex(row, center, center);
         &-img {
             height: $logo-des-h;
             width: $logo-des-w;
@@ -90,6 +91,7 @@
                 padding: $padding-m $padding-l;
                 color: $text-primary;
                 font-weight: $weight-semibold;
+                text-transform: capitalize;
                 cursor: pointer;
 
                 &:hover {
