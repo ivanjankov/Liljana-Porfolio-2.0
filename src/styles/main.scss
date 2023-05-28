@@ -210,15 +210,24 @@
         font-family: $font-secondary;
         margin-bottom: 32px;
         &-subtitle {
-            @include font($font-secondary, 46px, $weight-semibold, 1.5);
+            @include font($font-secondary, $text-xxl, $weight-semibold, 1.5);
             text-transform: capitalize;
             text-align: center;
+
+            @include breakpoint($sm-screen) {
+                font-size: $text-xl;
+            }
         }
 
         &-duck {
             text-align: center;
             font-size: $text-base;
         }
+    }
+
+    @include breakpoint($xl-screen) {
+        margin: 60px auto;
+        padding: 60px $padding-xxl;
     }
 }
 .projects {
@@ -250,14 +259,30 @@
             .project-sm-title {
                 font-size: $text-sm;
                 color: $secondary-300;
+                margin-bottom: $xs-space;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-base;
+                    font-weight: $weight-normal;
+                }
+                @include breakpoint($sm-screen) {
+                    font-size: $text-sm;
+                }
             }
 
             .project-lg-title {
                 font-size: $text-lg;
                 font-weight: $weight-semibold;
                 color: #fff;
+
+                @include breakpoint($sm-screen) {
+                }
             }
         }
+    }
+
+    @include breakpoint($lg-screen) {
+        grid-template-rows: auto;
     }
 }
 
@@ -266,6 +291,15 @@
     margin: 40px 0;
     padding: 40px 0 150px;
     background-color: $primary;
+
+    .container {
+        @include breakpoint($lg-screen) {
+            padding-inline: $padding-xxl;
+        }
+        @include breakpoint($sm-screen) {
+            padding-inline: $padding-l;
+        }
+    }
 
     &:after {
         @include wave('wave');
@@ -292,12 +326,23 @@
         font-size: $text-xl;
         font-weight: $weight-semibold;
         line-height: 1.3;
+
+        @include breakpoint($md-screen) {
+            font-size: $text-lg;
+        }
+        @include breakpoint($sm-screen) {
+            font-size: $text-base;
+        }
     }
 
     &-description {
         font-weight: normal;
         font-size: $text-base;
         line-height: 1.3;
+
+        @include breakpoint($sm-screen) {
+            font-size: $text-sm;
+        }
     }
 
     &:hover {
@@ -306,14 +351,17 @@
         color: #fff;
         cursor: pointer;
     }
+
+    @include breakpoint($md-screen) {
+        padding: $padding-m 0;
+    }
 }
 
 .footer {
     position: relative;
     margin: $l-space 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
-    // remove this when wave is implemented
-    // padding-top: $l-space;
+    padding-inline: $padding-xxl;
     background-color: $tertiary;
     width: 100%;
 
@@ -327,6 +375,10 @@
         color: $secondary;
         @include font($font-secondary, $text-xxl, $weight-bold, 1.3);
         text-align: center;
+
+        @include breakpoint($md-screen) {
+            font-size: $text-xl;
+        }
     }
 
     &__testimonial {
@@ -346,6 +398,7 @@
                 font-size: $text-lg;
                 padding-right: $padding-xs;
                 top: 0px;
+                left: 0px;
             }
             &:after {
                 position: absolute;
@@ -353,6 +406,10 @@
                 font-size: $text-lg;
                 padding-left: $padding-xs;
                 bottom: 0px;
+            }
+
+            @include breakpoint($md-screen) {
+                font-size: $text-base;
             }
         }
 
@@ -364,6 +421,15 @@
                 border-radius: 50%;
                 border: 1px solid $white;
             }
+
+            @include breakpoint($md-screen) {
+                max-width: 64px;
+                max-height: 64px;
+            }
+            @include breakpoint($sm-screen) {
+                max-width: 48px;
+                max-height: 48px;
+            }
         }
         &-info {
             @include flex(column, center, center, wrap, $xxs-space);
@@ -371,11 +437,19 @@
             &-name {
                 @include font($font-secondary, $text-lg, $weight-medium, 1.3);
                 color: $secondary-300;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-base;
+                }
             }
 
             &-role {
                 @include font($font-secondary, $text-base, $weight-normal, 1.3);
                 color: $white;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-sm;
+                }
             }
         }
     }
@@ -384,10 +458,14 @@
         width: 100%;
         @include flex(column, center, center, wrap, 0);
         border-top: 1px solid $white;
-        padding: $padding-l 0;
+        padding: $padding-l;
 
         &-grouped {
             @include flex(row, center, center, wrap, $padding-l);
         }
+    }
+
+    @include breakpoint($sm-screen) {
+        padding-inline: $padding-l;
     }
 }
