@@ -36,13 +36,23 @@
     &__section {
         @include flex(row, center, center, null, null);
         justify-content: center;
-        height: 70vh;
+        height: 70%;
 
         &-text {
             flex: 1 2 40%;
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
+
+            @include breakpoint($md-screen) {
+                flex: 1 1 50%;
+                font-size: $text-xxl;
+                word-break: keep-all;
+            }
+            @include breakpoint($sm-screen) {
+                flex: 1 1 100%;
+                text-align: center;
+            }
         }
 
         &-image {
@@ -56,7 +66,28 @@
                 width: 100%;
                 object-fit: cover;
             }
+
+            @include breakpoint($md-screen) {
+                flex: 1 1 50%;
+                height: auto;
+            }
+            @include breakpoint($sm-screen) {
+                display: none;
+            }
         }
+    }
+
+    @include breakpoint($xl-screen) {
+        padding: 0 $l-space;
+    }
+
+    @include breakpoint($md-screen) {
+        padding: $m-space $s-space;
+        height: auto;
+    }
+    @include breakpoint($sm-screen) {
+        padding: $s-space;
+        height: 50vh;
     }
 }
 .header {
@@ -73,6 +104,15 @@
             padding: $padding-s;
             line-height: 0;
             display: block;
+
+            @include breakpoint($lg-screen) {
+                height: $logo-des-h-lg;
+                width: $logo-des-w-lg;
+            }
+        }
+
+        @include breakpoint($lg-screen) {
+            flex: 1 1 20%;
         }
     }
 
@@ -103,6 +143,10 @@
                     color: $secondary;
                     border-bottom: 3px solid $secondary;
                 }
+
+                @include breakpoint($lg-screen) {
+                    padding: $padding-m $padding-m;
+                }
             }
         }
     }
@@ -119,11 +163,42 @@
             font-size: $text-md;
             color: $primary;
             font-weight: $weight-semibold;
+
+            @include breakpoint($lg-screen) {
+                font-size: $text-base;
+                padding: $padding-s $padding-xl;
+            }
         }
         &-link:hover {
             background-color: #ff4e2e;
             transition: background-color 0.4s ease-in;
         }
+        @include breakpoint($lg-screen) {
+            flex: 1 1 20%;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        width: 32px;
+        height: 24px;
+        padding: 2px;
+        cursor: pointer;
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: $text-primary;
+        }
+
+        @include breakpoint($md-screen) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    @include breakpoint($md-screen) {
+        display: none;
     }
 }
 
