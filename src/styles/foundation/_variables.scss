@@ -47,14 +47,26 @@ $weight-bold: 700;
 // Width
 
 $container-width: 978px;
+$container-width-lg: 800px;
+$container-width-md: 600px;
 $testimonial-width: 600px;
 $description-width: 1200px;
 
 // Logo
 
 $logo-des-h: 52px;
+$logo-des-h-lg: 44px;
+
 $logo-des-w: 140px;
+$logo-des-w-lg: 108px;
 
 // View height
 
 $vh-full: 100vh;
+
+// Breakpoints
+
+$sm-screen: 576px;
+$md-screen: 768px;
+$lg-screen: 992px;
+$xl-screen: 1200px;

@@ -36,13 +36,23 @@
     &__section {
         @include flex(row, center, center, null, null);
         justify-content: center;
-        height: 70vh;
+        height: 70%;
 
         &-text {
             flex: 1 2 40%;
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
+
+            @include breakpoint($md-screen) {
+                flex: 1 1 50%;
+                font-size: $text-xxl;
+                word-break: keep-all;
+            }
+            @include breakpoint($sm-screen) {
+                flex: 1 1 100%;
+                text-align: center;
+            }
         }
 
         &-image {
@@ -56,7 +66,28 @@
                 width: 100%;
                 object-fit: cover;
             }
+
+            @include breakpoint($md-screen) {
+                flex: 1 1 50%;
+                height: auto;
+            }
+            @include breakpoint($sm-screen) {
+                display: none;
+            }
         }
+    }
+
+    @include breakpoint($xl-screen) {
+        padding: 0 $l-space;
+    }
+
+    @include breakpoint($md-screen) {
+        padding: $m-space $s-space;
+        height: auto;
+    }
+    @include breakpoint($sm-screen) {
+        padding: $s-space;
+        height: 50vh;
     }
 }
 .header {
@@ -66,12 +97,22 @@
 
     &__logo {
         flex: 1 1 25%;
+        @include flex(row, center, center);
         &-img {
             height: $logo-des-h;
             width: $logo-des-w;
             padding: $padding-s;
             line-height: 0;
             display: block;
+
+            @include breakpoint($lg-screen) {
+                height: $logo-des-h-lg;
+                width: $logo-des-w-lg;
+            }
+        }
+
+        @include breakpoint($lg-screen) {
+            flex: 1 1 20%;
         }
     }
 
@@ -90,6 +131,7 @@
                 padding: $padding-m $padding-l;
                 color: $text-primary;
                 font-weight: $weight-semibold;
+                text-transform: capitalize;
                 cursor: pointer;
 
                 &:hover {
@@ -100,6 +142,10 @@
                 &.active {
                     color: $secondary;
                     border-bottom: 3px solid $secondary;
+                }
+
+                @include breakpoint($lg-screen) {
+                    padding: $padding-m $padding-m;
                 }
             }
         }
@@ -117,11 +163,42 @@
             font-size: $text-md;
             color: $primary;
             font-weight: $weight-semibold;
+
+            @include breakpoint($lg-screen) {
+                font-size: $text-base;
+                padding: $padding-s $padding-xl;
+            }
         }
         &-link:hover {
             background-color: #ff4e2e;
             transition: background-color 0.4s ease-in;
         }
+        @include breakpoint($lg-screen) {
+            flex: 1 1 20%;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        width: 32px;
+        height: 24px;
+        padding: 2px;
+        cursor: pointer;
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: $text-primary;
+        }
+
+        @include breakpoint($md-screen) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    @include breakpoint($md-screen) {
+        display: none;
     }
 }
 
@@ -133,15 +210,24 @@
         font-family: $font-secondary;
         margin-bottom: 32px;
         &-subtitle {
-            @include font($font-secondary, 46px, $weight-semibold, 1.5);
+            @include font($font-secondary, $text-xxl, $weight-semibold, 1.5);
             text-transform: capitalize;
             text-align: center;
+
+            @include breakpoint($sm-screen) {
+                font-size: $text-xl;
+            }
         }
 
         &-duck {
             text-align: center;
             font-size: $text-base;
         }
+    }
+
+    @include breakpoint($xl-screen) {
+        margin: 60px auto;
+        padding: 60px $padding-xxl;
     }
 }
 .projects {
@@ -173,14 +259,30 @@
             .project-sm-title {
                 font-size: $text-sm;
                 color: $secondary-300;
+                margin-bottom: $xs-space;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-base;
+                    font-weight: $weight-normal;
+                }
+                @include breakpoint($sm-screen) {
+                    font-size: $text-sm;
+                }
             }
 
             .project-lg-title {
                 font-size: $text-lg;
                 font-weight: $weight-semibold;
                 color: #fff;
+
+                @include breakpoint($sm-screen) {
+                }
             }
         }
+    }
+
+    @include breakpoint($lg-screen) {
+        grid-template-rows: auto;
     }
 }
 
@@ -189,6 +291,15 @@
     margin: 40px 0;
     padding: 40px 0 150px;
     background-color: $primary;
+
+    .container {
+        @include breakpoint($lg-screen) {
+            padding-inline: $padding-xxl;
+        }
+        @include breakpoint($sm-screen) {
+            padding-inline: $padding-l;
+        }
+    }
 
     &:after {
         @include wave('wave');
@@ -215,12 +326,23 @@
         font-size: $text-xl;
         font-weight: $weight-semibold;
         line-height: 1.3;
+
+        @include breakpoint($md-screen) {
+            font-size: $text-lg;
+        }
+        @include breakpoint($sm-screen) {
+            font-size: $text-base;
+        }
     }
 
     &-description {
         font-weight: normal;
         font-size: $text-base;
         line-height: 1.3;
+
+        @include breakpoint($sm-screen) {
+            font-size: $text-sm;
+        }
     }
 
     &:hover {
@@ -229,14 +351,17 @@
         color: #fff;
         cursor: pointer;
     }
+
+    @include breakpoint($md-screen) {
+        padding: $padding-m 0;
+    }
 }
 
 .footer {
     position: relative;
     margin: $l-space 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
-    // remove this when wave is implemented
-    // padding-top: $l-space;
+    padding-inline: $padding-xxl;
     background-color: $tertiary;
     width: 100%;
 
@@ -250,6 +375,10 @@
         color: $secondary;
         @include font($font-secondary, $text-xxl, $weight-bold, 1.3);
         text-align: center;
+
+        @include breakpoint($md-screen) {
+            font-size: $text-xl;
+        }
     }
 
     &__testimonial {
@@ -269,6 +398,7 @@
                 font-size: $text-lg;
                 padding-right: $padding-xs;
                 top: 0px;
+                left: 0px;
             }
             &:after {
                 position: absolute;
@@ -276,6 +406,10 @@
                 font-size: $text-lg;
                 padding-left: $padding-xs;
                 bottom: 0px;
+            }
+
+            @include breakpoint($md-screen) {
+                font-size: $text-base;
             }
         }
 
@@ -287,6 +421,15 @@
                 border-radius: 50%;
                 border: 1px solid $white;
             }
+
+            @include breakpoint($md-screen) {
+                max-width: 64px;
+                max-height: 64px;
+            }
+            @include breakpoint($sm-screen) {
+                max-width: 48px;
+                max-height: 48px;
+            }
         }
         &-info {
             @include flex(column, center, center, wrap, $xxs-space);
@@ -294,11 +437,19 @@
             &-name {
                 @include font($font-secondary, $text-lg, $weight-medium, 1.3);
                 color: $secondary-300;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-base;
+                }
             }
 
             &-role {
                 @include font($font-secondary, $text-base, $weight-normal, 1.3);
                 color: $white;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-sm;
+                }
             }
         }
     }
@@ -307,10 +458,14 @@
         width: 100%;
         @include flex(column, center, center, wrap, 0);
         border-top: 1px solid $white;
-        padding: $padding-l 0;
+        padding: $padding-l;
 
         &-grouped {
             @include flex(row, center, center, wrap, $padding-l);
         }
+    }
+
+    @include breakpoint($sm-screen) {
+        padding-inline: $padding-l;
     }
 }
