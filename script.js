@@ -1,3 +1,4 @@
+import Splide from './node_modules/@splidejs';
 import { footerIcons } from './src/modules/icons.js';
 
 const iconsWrapper = document.getElementById('footer-icons');
@@ -69,3 +70,8 @@ const toggleHamburger = () => {
 };
 
 toggleHamburger();
+
+// Triger Splide Slider
+
+const splide = new Splide('.splide');
+splide.mount();

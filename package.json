@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/ivanjankov/Liljana-Porfolio-2.0/issues"
   },
-  "homepage": "https://github.com/ivanjankov/Liljana-Porfolio-2.0#readme",
-  "dependencies": {
-    "@splidejs/splide": "^4.1.4"
-  }
+  "homepage": "https://github.com/ivanjankov/Liljana-Porfolio-2.0#readme"
 }
