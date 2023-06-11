@@ -462,6 +462,13 @@
 
         &-grouped {
             @include flex(row, center, center, wrap, $padding-l);
+
+            .icon_link {
+                i {
+                    color: $white;
+                    font-size: $text-xl;
+                }
+            }
         }
     }
 
