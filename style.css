@@ -716,6 +716,10 @@ a {
   flex-wrap: wrap;
   gap: 16px;
 }
+.footer__icons-grouped .icon_link i {
+  color: #ffffff;
+  font-size: 1.75rem;
+}
 @media (max-width: 576px) {
   .footer {
     padding-inline: 16px;

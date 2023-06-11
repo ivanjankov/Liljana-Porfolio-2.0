@@ -7,6 +7,7 @@ const displayFooterIcons = (iconsContainer, iconsArr) => {
         const link = document.createElement('a');
         link.setAttribute('href', icon.href);
         link.setAttribute('target', '_blank');
+        link.classList.add('icon_link');
         link.innerHTML = icon.svg;
         iconsContainer.appendChild(link);
     });
