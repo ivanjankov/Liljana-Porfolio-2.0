@@ -1,4 +1,3 @@
-import Splide from './node_modules/@splidejs';
 import { footerIcons } from './src/modules/icons.js';
 
 const iconsWrapper = document.getElementById('footer-icons');
@@ -73,5 +72,19 @@ toggleHamburger();
 
 // Triger Splide Slider
 
-const splide = new Splide('.splide');
+const splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    gap: '12px',
+    width: '100%',
+    breakpoints: {
+        768: {
+            perPage: 2,
+        },
+        576: {
+            perPage: 1,
+        },
+    },
+});
 splide.mount();
