@@ -9,6 +9,11 @@
             rel="stylesheet"
             href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+        />
 
         <title>Liljana Portoflio</title>
     </head>
@@ -69,7 +74,68 @@
                 </p>
             </header>
 
-            <main class="projects">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="projects__item">
+                                <figure class="projects__item-figure">
+                                    <img
+                                        src="src/assets/img/projects/kiosk.png"
+                                        alt="Project name"
+                                    />
+                                </figure>
+                                <div class="projects__item-heading">
+                                    <h3 class="project-sm-title">
+                                        Logo and Design
+                                    </h3>
+                                    <h2 class="project-lg-title">M Kiosk</h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="projects__item">
+                                <figure class="projects__item-figure">
+                                    <img
+                                        src="src/assets/img/projects/lottery.png"
+                                        alt="Project name"
+                                    />
+                                </figure>
+                                <div class="projects__item-heading">
+                                    <h3 class="project-sm-title">
+                                        Logo and Design
+                                    </h3>
+                                    <h2 class="project-lg-title">
+                                        Lottery Ticket
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <a
+                                href="src/pages/kriterium.html"
+                                class="projects__item"
+                            >
+                                <figure class="projects__item-figure">
+                                    <img
+                                        src="src/assets/img/projects/czy-stry.png"
+                                        alt="Project name"
+                                    />
+                                </figure>
+                                <div class="projects__item-heading">
+                                    <h3 class="project-sm-title">
+                                        Logo and Design
+                                    </h3>
+                                    <h2 class="project-lg-title">
+                                        Kriterium Music
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- <main class="projects">
                 <a href="src/pages/kriterium.html" class="projects__item">
                     <figure class="projects__item-figure">
                         <img
@@ -106,7 +172,7 @@
                         <h2 class="project-lg-title">M Kiosk</h2>
                     </div>
                 </div>
-            </main>
+            </main> -->
         </section>
 
         <!-- SERVICES SECTION -->

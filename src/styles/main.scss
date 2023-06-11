@@ -3,6 +3,7 @@
 @import './foundation/reset';
 @import './foundation/mixins';
 @import './foundation/projects';
+@import '../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
 
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);

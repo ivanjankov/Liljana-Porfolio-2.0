@@ -69,3 +69,22 @@ const toggleHamburger = () => {
 };
 
 toggleHamburger();
+
+// Triger Splide Slider
+
+const splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    gap: '12px',
+    width: '100%',
+    breakpoints: {
+        768: {
+            perPage: 2,
+        },
+        576: {
+            perPage: 1,
+        },
+    },
+});
+splide.mount();
