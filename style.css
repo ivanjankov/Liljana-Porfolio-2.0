@@ -205,20 +205,16 @@ a {
 }
 
 .hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   position: relative;
   height: 90vh;
   background-color: #ffe5b8;
   max-height: 100%;
-}
-.hero:after {
-  position: absolute;
-  content: "";
-  background: url("src/assets/img/wave.png") no-repeat;
-  background-size: 100% 100%;
-  width: 100%;
-  height: 100px;
-  left: 0;
-  bottom: -70px;
+  overflow: hidden;
 }
 .hero__section {
   display: flex;
@@ -226,7 +222,22 @@ a {
   justify-content: center;
   align-items: center;
   justify-content: center;
-  height: 70%;
+  max-height: 100%;
+}
+.hero__section:after {
+  position: absolute;
+  content: "";
+  background: url("src/assets/img/wave-white.png") no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  bottom: -50px;
+}
+@media (max-width: 992px) {
+  .hero__section:after {
+    bottom: 0px;
+  }
 }
 .hero__section-text {
   flex: 1 2 40%;
@@ -236,15 +247,15 @@ a {
 }
 @media (max-width: 768px) {
   .hero__section-text {
-    flex: 1 1 50%;
     font-size: 2.875rem;
     word-break: keep-all;
+    text-align: center;
   }
 }
 @media (max-width: 576px) {
   .hero__section-text {
     flex: 1 1 100%;
-    text-align: center;
+    font-size: 1.75rem;
   }
 }
 .hero__section-image {
@@ -260,12 +271,6 @@ a {
 }
 @media (max-width: 768px) {
   .hero__section-image {
-    flex: 1 1 50%;
-    height: auto;
-  }
-}
-@media (max-width: 576px) {
-  .hero__section-image {
     display: none;
   }
 }
@@ -277,7 +282,7 @@ a {
 @media (max-width: 768px) {
   .hero {
     padding: 24px 16px;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,8 +394,8 @@ a {
     display: flex;
     scale: 1;
     transform: translateY(0);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #ffe5b8;
   }
 }
@@ -463,8 +468,8 @@ a {
     z-index: 10;
   }
   .header.active {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -499,6 +504,12 @@ a {
   .section {
     margin: 60px auto;
     padding: 60px 24px;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    margin: 0 auto;
+    padding: 32px 24px;
   }
 }
 
