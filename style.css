@@ -411,7 +411,7 @@ a {
   display: inline-block;
   border: 1px solid #e56e00;
   border-radius: 40px;
-  background-color: #e56e00;
+  background-color: #ff5c40;
   padding: 12px 24px;
   font-size: 1.125rem;
   color: #ffe5b8;
@@ -424,8 +424,8 @@ a {
   }
 }
 .header__button-link:hover {
-  background-color: #ff4e2e;
-  transition: background-color 0.4s ease-in;
+  background-color: #e82402;
+  transition: background-color 0.2s ease-in;
 }
 @media (max-width: 992px) {
   .header__button {
@@ -682,7 +682,7 @@ a {
 }
 .footer__heading {
   margin-bottom: 32px;
-  color: #ff5f42;
+  color: #ff5c40;
   font-family: "Poppins", "sans-serif";
   font-size: 2.875rem;
   font-weight: 700;
@@ -808,13 +808,42 @@ a {
   flex-wrap: wrap;
   gap: 16px;
 }
-.footer__icons-grouped .icon_link i {
-  color: #ffffff;
-  font-size: 1.75rem;
+.footer__icons-grouped .icon_link img {
+  width: 24px;
+  height: 24px;
 }
 @media (max-width: 576px) {
   .footer {
     padding-inline: 16px;
+  }
+}
+
+#loading-screen {
+  position: fixed;
+  background-color: #ffe5b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+#loading-screen .circle {
+  border: 4px solid #ff5c40;
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  border-bottom-color: transparent;
+  animation: rotating 1.5s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

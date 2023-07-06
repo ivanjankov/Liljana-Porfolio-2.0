@@ -1,3 +1,8 @@
+let loadingScreen = document.getElementById('loading-screen');
+window.addEventListener('load', () => {
+    loadingScreen.style.display = 'none';
+});
+
 // Toggle hamburger menu
 
 const hamburgerMenu = document.getElementById('hamburger-menu');
