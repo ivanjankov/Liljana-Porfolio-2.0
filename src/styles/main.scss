@@ -145,13 +145,13 @@
                 cursor: pointer;
 
                 &:hover {
-                    color: $secondary;
+                    color: $secondary-main;
                     transition: color 0.2s ease;
                 }
 
                 &.active {
-                    color: $secondary;
-                    border-bottom: 3px solid $secondary;
+                    color: $secondary-main;
+                    border-bottom: 3px solid $secondary-main;
 
                     @include breakpoint($md-screen) {
                         border-bottom: 0;
@@ -261,9 +261,9 @@
 }
 
 .section {
-    margin: 100px auto;
-    padding: 100px 0;
-    overflow: hidden;
+    margin: 32px auto;
+    padding: 96px 0;
+    // overflow: hidden;
 
     &__heading {
         font-family: $font-secondary;
@@ -321,7 +321,7 @@
 
             .project-sm-title {
                 font-size: $text-sm;
-                color: $secondary-300;
+                color: $secondary-main;
                 margin-bottom: $xs-space;
 
                 @include breakpoint($md-screen) {
@@ -352,8 +352,9 @@
 .services {
     position: relative;
     margin: 40px 0;
-    padding: 40px 0 150px;
+    padding: 40px 0 64px;
     background-color: $primary;
+    z-index: 10;
 
     .container {
         @include breakpoint($lg-screen) {
@@ -424,7 +425,7 @@
     position: relative;
     margin: $l-space 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
-    padding-inline: $padding-xxl;
+    padding: 48px $padding-xxl 0;
     background-color: $tertiary;
     width: 100%;
 
