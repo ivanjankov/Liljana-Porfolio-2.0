@@ -62,8 +62,18 @@ let services = [
     },
     {
         service: 'Social Media Content',
-        description: 'Logo and brand identity',
+        description: 'Social media post and marketing',
         content: ['service 5', 'service 6', 'service 7'],
+    },
+    {
+        service: 'Online Advertising',
+        description: ' Banners, apps and pop-ups',
+        content: ['service 9', 'service 8', 'service 10'],
+    },
+    {
+        service: 'Print Advertisments',
+        description: ' Printed advertisments',
+        content: ['service 11', 'service 12', 'service 13'],
     },
 ];
 

@@ -191,6 +191,9 @@ a {
 .main {
   font-family: "Poppins", "sans-serif";
 }
+.main-modal-active {
+  overflow: hidden;
+}
 
 .container {
   max-width: 978px;
@@ -360,12 +363,12 @@ a {
   cursor: pointer;
 }
 .header__menu-item-link:hover {
-  color: #ff5f42;
+  color: #f45757;
   transition: color 0.2s ease;
 }
 .header__menu-item-link.active {
-  color: #ff5f42;
-  border-bottom: 3px solid #ff5f42;
+  color: #f45757;
+  border-bottom: 3px solid #f45757;
 }
 @media (max-width: 768px) {
   .header__menu-item-link.active {
@@ -411,7 +414,7 @@ a {
   display: inline-block;
   border: 1px solid #e56e00;
   border-radius: 40px;
-  background-color: #ff5c40;
+  background-color: #f45757;
   padding: 12px 24px;
   font-size: 1.125rem;
   color: #ffe5b8;
@@ -474,13 +477,12 @@ a {
 }
 
 .section {
-  margin: 100px auto;
-  padding: 100px 0;
-  overflow: hidden;
+  margin: 32px auto;
+  padding: 96px 0;
 }
 .section__heading {
   font-family: "Poppins", "sans-serif";
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 .section__heading-subtitle {
   font-family: "Poppins", "sans-serif";
@@ -520,6 +522,7 @@ a {
   align-items: center;
   column-gap: 40px;
   margin-block: 40px;
+  height: 80vh;
 }
 .projects__item {
   display: grid;
@@ -546,7 +549,7 @@ a {
 }
 .projects__item-heading .project-sm-title {
   font-size: 0.8125rem;
-  color: #e56e00;
+  color: #f45757;
   margin-bottom: 8px;
 }
 @media (max-width: 768px) {
@@ -574,8 +577,15 @@ a {
 .services {
   position: relative;
   margin: 40px 0;
-  padding: 40px 0 150px;
+  padding: 40px 0 64px;
   background-color: #ffe5b8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services .container {
+  width: 100%;
 }
 @media (max-width: 992px) {
   .services .container {
@@ -606,6 +616,76 @@ a {
   height: 100px;
   top: -70px;
   transform: rotate(180deg);
+}
+.services .modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+.services .modal-heading {
+  align-self: center;
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.services .modal_content {
+  position: relative;
+  min-width: 600px;
+  height: 400px;
+  background-color: #ffe5b8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  border: 2px solid #333333;
+  padding: 20px 24px;
+}
+.services .modal-list {
+  margin-bottom: auto;
+}
+.services .modal-list li {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+  list-style: square;
+}
+.services .modal-cta {
+  margin-top: auto;
+  align-self: flex-end;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.services .modal-cta a {
+  color: #ffe5b8;
+}
+.services .modal_button-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 4px;
+  border-radius: 100%;
+}
+.services .modal_button-close:hover {
+  background-color: #ffd68f;
+  transition: background-color 0.2s ease-in;
+}
+.services .modal.active {
+  display: flex;
+  top: 0px;
 }
 
 .section__service {
@@ -650,24 +730,38 @@ a {
   background-color: #323232;
   transition: background-color 0.3s ease-in;
   color: #fff;
-  cursor: pointer;
+}
+.section__service:hover > button {
+  max-height: 40px;
+  transition: all 0.4s ease-in;
 }
 @media (max-width: 768px) {
   .section__service {
     padding: 12px 0;
   }
 }
+.section__service .service-link {
+  background-color: transparent;
+  border: none;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  color: #f45757;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 .footer {
   position: relative;
-  margin: 32px 0;
+  margin: 84px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 0;
-  padding-inline: 24px;
+  padding: 48px 24px 0;
   background-color: #0f0f0f;
   width: 100%;
 }
@@ -682,7 +776,7 @@ a {
 }
 .footer__heading {
   margin-bottom: 32px;
-  color: #ff5c40;
+  color: #f45757;
   font-family: "Poppins", "sans-serif";
   font-size: 2.875rem;
   font-weight: 700;
@@ -830,7 +924,7 @@ a {
   inset: 0;
 }
 #loading-screen .circle {
-  border: 4px solid #ff5c40;
+  border: 4px solid #f45757;
   width: 52px;
   height: 52px;
   border-radius: 100%;
