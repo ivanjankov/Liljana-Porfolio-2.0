@@ -94,10 +94,6 @@ function createServices(servicesArray) {
         if (window.innerWidth < 992) {
             serviceButton.style.maxHeight = '40px';
         }
-
-        // service.addEventListener('mouseenter', () => {
-        //     serviceButton.style.maxHeight = '40px';
-        // });
         serviceButton.addEventListener('click', () => {
             showModal();
             populariseModal(el.content);
