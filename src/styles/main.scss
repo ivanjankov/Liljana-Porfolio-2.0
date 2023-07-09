@@ -8,6 +8,10 @@
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);
     font-family: $font-secondary;
+
+    &-modal-active {
+        overflow: hidden;
+    }
 }
 
 .container {
@@ -267,7 +271,7 @@
 
     &__heading {
         font-family: $font-secondary;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
         &-subtitle {
             @include font($font-secondary, $text-xxl, $weight-semibold, 1.5);
             text-transform: capitalize;
@@ -297,6 +301,7 @@
     @include grid(repeat(3, 1fr), 250px, center);
     column-gap: 40px;
     margin-block: 40px;
+    height: 80vh;
 
     &__item {
         @include grid(repeat(2, 1fr), auto, start);
@@ -354,9 +359,10 @@
     margin: 40px 0;
     padding: 40px 0 64px;
     background-color: $primary;
-    z-index: 10;
+    @include flex(column, center, center, null, null);
 
     .container {
+        width: 100%;
         @include breakpoint($lg-screen) {
             padding-inline: $padding-xxl;
         }
@@ -375,6 +381,78 @@
         @include wave('wave');
         top: -70px;
         transform: rotate(180deg);
+    }
+
+    .modal {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        @include flex(row, center, center, wrap, null);
+        display: none;
+
+        &-heading {
+            align-self: center;
+            margin-bottom: $m-space;
+            font-size: $text-xl;
+            font-weight: 600;
+        }
+
+        &_content {
+            position: relative;
+            min-width: 600px;
+            height: 400px;
+            background-color: $primary;
+            @include flex(column, center, flex-start, wrap, null);
+            border-radius: 8px;
+            border: 2px solid $text-primary;
+            padding: $padding-xl $padding-xxl;
+        }
+
+        &-list {
+            margin-bottom: auto;
+
+            li {
+                font-size: $text-md;
+                font-weight: 400;
+                margin-bottom: $xxs-space;
+                list-style: square;
+            }
+        }
+
+        &-cta {
+            margin-top: auto;
+            align-self: flex-end;
+            padding: 8px 16px;
+            cursor: pointer;
+
+            a {
+                color: $primary;
+            }
+        }
+
+        &_button-close {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            padding: 4px;
+            border-radius: 100%;
+
+            &:hover {
+                background-color: #ffd68f;
+                transition: background-color 0.2s ease-in;
+            }
+        }
+
+        &.active {
+            display: flex;
+            top: 0px;
+        }
     }
 }
 
@@ -423,7 +501,7 @@
 
 .footer {
     position: relative;
-    margin: $l-space 0;
+    margin: 84px 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
     padding: 48px $padding-xxl 0;
     background-color: $tertiary;

@@ -44,3 +44,25 @@ const splide = new Splide('.splide', {
     },
 });
 splide.mount();
+
+// Modal
+
+let modal = document.querySelector('.modal');
+let modalContent = document.querySelector('.modal_content');
+let body = document.querySelector('.main');
+let closeButtonModal = document.querySelector('.modal_button-close');
+
+let toggleModal = () => {
+    body.classList.toggle('main-modal-active');
+    modal.classList.toggle('active');
+};
+
+closeButtonModal.addEventListener('click', (e) => {
+    toggleModal();
+});
+
+modalContent.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+modal.addEventListener('click', toggleModal);
+toggleModal();
