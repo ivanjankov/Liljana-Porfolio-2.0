@@ -8,6 +8,7 @@
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);
     font-family: $font-secondary;
+    height: auto;
 
     &-modal-active {
         overflow: hidden;
@@ -27,7 +28,7 @@
 }
 
 .hero {
-    @include flex(row, space-between, center, $gap: null);
+    @include flex(row, space-between, flex-end, $gap: null);
     position: relative;
     height: 90vh;
     background-color: $primary;
@@ -42,7 +43,7 @@
         &:after {
             @include wave('wave-white');
             left: 0;
-            bottom: -50px;
+            bottom: -24px;
 
             @include breakpoint($lg-screen) {
                 bottom: 0px;
@@ -104,6 +105,10 @@
     @include flex(row, space-between, center, $gap: null);
     padding: $padding-xl 0;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: $primary;
 
     &__logo {
         flex: 1 1 25%;
@@ -517,9 +522,9 @@
 
 .footer {
     position: relative;
-    margin: 84px 0;
+    margin: 48px 0 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
-    padding: 48px $padding-xxl 0;
+    // padding: 0px $padding-xxl 0;
     background-color: $tertiary;
     width: 100%;
 
