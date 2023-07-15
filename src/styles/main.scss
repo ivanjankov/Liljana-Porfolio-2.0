@@ -32,13 +32,12 @@
     position: relative;
     height: 90vh;
     background-color: $primary;
-    max-height: 100%;
     overflow: hidden;
 
     &__section {
         @include flex(row, center, center, null, null);
         justify-content: center;
-        max-height: 100%;
+        height: 90%;
 
         &:after {
             @include wave('wave-white');
@@ -55,6 +54,7 @@
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
+            line-height: 1.25;
 
             @include breakpoint($md-screen) {
                 font-size: $text-xxl;
@@ -72,10 +72,12 @@
             overflow: hidden;
             height: 100%;
             width: auto;
+            display: flex;
+            justify-content: center;
 
             &-element {
-                height: auto;
-                width: 100%;
+                height: 100%;
+                width: auto;
                 object-fit: cover;
             }
 
@@ -103,12 +105,12 @@
 }
 .header {
     @include flex(row, space-between, center, $gap: null);
-    padding: $padding-xl 0;
+    padding: $padding-s 0;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: $primary;
+    background-color: $white;
 
     &__logo {
         flex: 1 1 25%;
@@ -146,7 +148,6 @@
 
             &-link {
                 display: inline-block;
-                border-bottom: 1px solid $text-primary;
                 padding: $padding-m $padding-l;
                 color: $text-primary;
                 font-weight: $weight-semibold;
@@ -207,7 +208,7 @@
             border: 1px solid $secondary-300;
             border-radius: 40px;
             background-color: $secondary-main;
-            padding: $padding-m $padding-xxl;
+            padding: $padding-s $padding-xxl;
             font-size: $text-md;
             color: $primary;
             font-weight: $weight-semibold;
