@@ -78,7 +78,6 @@
             gap: $xs-space;
             margin-top: $m-space;
             cursor: pointer;
-            margin-inline: auto;
 
             &:hover {
                 color: $secondary-main;
@@ -93,6 +92,10 @@
                 font-size: $text-md;
                 font-weight: 600;
                 text-transform: uppercase;
+            }
+
+            @include breakpoint($md-screen) {
+                margin-inline: auto;
             }
         }
 
@@ -488,6 +491,25 @@
             display: flex;
             top: 0px;
         }
+    }
+}
+
+.section-new-lvl {
+    padding-bottom: $xl-space;
+    h2 {
+        max-width: 50%;
+        margin-inline: auto;
+        line-height: 1.25;
+
+        @include breakpoint($md-screen) {
+            max-width: 90%;
+            font-size: $text-xl;
+        }
+    }
+    button {
+        margin-top: $m-space;
+        display: block;
+        margin-inline: auto;
     }
 }
 

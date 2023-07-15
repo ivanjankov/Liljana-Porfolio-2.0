@@ -273,7 +273,6 @@ a {
   gap: 8px;
   margin-top: 24px;
   cursor: pointer;
-  margin-inline: auto;
 }
 .hero__section-btn-projects:hover {
   color: #f45757;
@@ -286,6 +285,11 @@ a {
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .hero__section-btn-projects {
+    margin-inline: auto;
+  }
 }
 .hero__section-image {
   flex: 1 1 60%;
@@ -717,6 +721,26 @@ a {
 .services .modal.active {
   display: flex;
   top: 0px;
+}
+
+.section-new-lvl {
+  padding-bottom: 40px;
+}
+.section-new-lvl h2 {
+  max-width: 50%;
+  margin-inline: auto;
+  line-height: 1.25;
+}
+@media (max-width: 768px) {
+  .section-new-lvl h2 {
+    max-width: 90%;
+    font-size: 1.75rem;
+  }
+}
+.section-new-lvl button {
+  margin-top: 24px;
+  display: block;
+  margin-inline: auto;
 }
 
 .section__service {
