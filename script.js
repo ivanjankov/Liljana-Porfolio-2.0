@@ -30,7 +30,7 @@ toggleHamburger();
 
 const splide = new Splide('.splide', {
     type: 'loop',
-    perPage: 3,
+    perPage: 2,
     perMove: 1,
     gap: '12px',
     width: '100%',

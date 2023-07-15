@@ -242,8 +242,10 @@ a {
     bottom: 0px;
   }
 }
-.hero__section-text {
+.hero__section-welcome {
   flex: 1 2 40%;
+}
+.hero__section-text {
   font-size: 3.875rem;
   font-family: "chavierabold";
   font-weight: 500;
@@ -261,6 +263,29 @@ a {
     flex: 1 1 100%;
     font-size: 1.75rem;
   }
+}
+.hero__section-btn-projects {
+  background-color: transparent;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  cursor: pointer;
+  margin-inline: auto;
+}
+.hero__section-btn-projects:hover {
+  color: #f45757;
+}
+.hero__section-btn-projects:hover > svg {
+  animation: lineMove 0.9s linear infinite;
+  stroke: #f45757;
+}
+.hero__section-btn-projects span {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .hero__section-image {
   flex: 1 1 60%;
@@ -943,6 +968,14 @@ a {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes lineMove {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(80%);
   }
 }
 

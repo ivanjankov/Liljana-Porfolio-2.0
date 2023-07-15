@@ -49,8 +49,10 @@
             }
         }
 
-        &-text {
+        &-welcome {
             flex: 1 2 40%;
+        }
+        &-text {
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
@@ -64,6 +66,33 @@
             @include breakpoint($sm-screen) {
                 flex: 1 1 100%;
                 font-size: $text-xl;
+            }
+        }
+
+        &-btn-projects {
+            background-color: transparent;
+            border: 0;
+            border-radius: 4px;
+            padding: $padding-s;
+            display: flex;
+            gap: $xs-space;
+            margin-top: $m-space;
+            cursor: pointer;
+            margin-inline: auto;
+
+            &:hover {
+                color: $secondary-main;
+
+                & > svg {
+                    animation: lineMove 0.9s linear infinite;
+                    stroke: $secondary-main;
+                }
+            }
+
+            span {
+                font-size: $text-md;
+                font-weight: 600;
+                text-transform: uppercase;
             }
         }
 
@@ -668,5 +697,14 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes lineMove {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(80%);
     }
 }
