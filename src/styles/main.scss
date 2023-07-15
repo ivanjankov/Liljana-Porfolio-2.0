@@ -32,13 +32,12 @@
     position: relative;
     height: 90vh;
     background-color: $primary;
-    max-height: 100%;
     overflow: hidden;
 
     &__section {
         @include flex(row, center, center, null, null);
         justify-content: center;
-        max-height: 100%;
+        height: 90%;
 
         &:after {
             @include wave('wave-white');
@@ -50,11 +49,14 @@
             }
         }
 
-        &-text {
+        &-welcome {
             flex: 1 2 40%;
+        }
+        &-text {
             font-size: $hero-text;
             font-family: $font-primary;
             font-weight: 500;
+            line-height: 1.25;
 
             @include breakpoint($md-screen) {
                 font-size: $text-xxl;
@@ -67,15 +69,47 @@
             }
         }
 
+        &-btn-projects {
+            background-color: transparent;
+            border: 0;
+            border-radius: 4px;
+            padding: $padding-s;
+            display: flex;
+            gap: $xs-space;
+            margin-top: $m-space;
+            cursor: pointer;
+
+            &:hover {
+                color: $secondary-main;
+
+                & > svg {
+                    animation: lineMove 0.9s linear infinite;
+                    stroke: $secondary-main;
+                }
+            }
+
+            span {
+                font-size: $text-md;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            @include breakpoint($md-screen) {
+                margin-inline: auto;
+            }
+        }
+
         &-image {
             flex: 1 1 60%;
             overflow: hidden;
             height: 100%;
             width: auto;
+            display: flex;
+            justify-content: center;
 
             &-element {
-                height: auto;
-                width: 100%;
+                height: 100%;
+                width: auto;
                 object-fit: cover;
             }
 
@@ -103,12 +137,12 @@
 }
 .header {
     @include flex(row, space-between, center, $gap: null);
-    padding: $padding-xl 0;
+    padding: $padding-s 0;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: $primary;
+    background-color: $white;
 
     &__logo {
         flex: 1 1 25%;
@@ -146,7 +180,6 @@
 
             &-link {
                 display: inline-block;
-                border-bottom: 1px solid $text-primary;
                 padding: $padding-m $padding-l;
                 color: $text-primary;
                 font-weight: $weight-semibold;
@@ -207,7 +240,7 @@
             border: 1px solid $secondary-300;
             border-radius: 40px;
             background-color: $secondary-main;
-            padding: $padding-m $padding-xxl;
+            padding: $padding-s $padding-xxl;
             font-size: $text-md;
             color: $primary;
             font-weight: $weight-semibold;
@@ -461,6 +494,25 @@
     }
 }
 
+.section-new-lvl {
+    padding-bottom: $xl-space;
+    h2 {
+        max-width: 50%;
+        margin-inline: auto;
+        line-height: 1.25;
+
+        @include breakpoint($md-screen) {
+            max-width: 90%;
+            font-size: $text-xl;
+        }
+    }
+    button {
+        margin-top: $m-space;
+        display: block;
+        margin-inline: auto;
+    }
+}
+
 .section__service {
     @include flex(column, center, center, wrap, $xxs-space);
     margin-bottom: $s-space;
@@ -667,5 +719,14 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes lineMove {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(80%);
     }
 }
