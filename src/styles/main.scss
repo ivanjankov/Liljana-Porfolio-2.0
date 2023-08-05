@@ -5,6 +5,10 @@
 @import './foundation/projects';
 @import '../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);
     font-family: $font-secondary;

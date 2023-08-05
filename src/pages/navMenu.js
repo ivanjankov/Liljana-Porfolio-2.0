@@ -15,10 +15,10 @@ let navMenu = `
             </figure>
             <ul class="header__menu">
                 <li class="header__menu-item">
-                    <a href="" class="header__menu-item-link">Home</a>
+                    <a href="../../index.html" class="header__menu-item-link">Home</a>
                 </li>
                 <li class="header__menu-item">
-                    <a href="" class="header__menu-item-link active">Projects</a>
+                    <a href="../../index.html#projects" class="header__menu-item-link active">Projects</a>
                 </li>
                 <li class="header__menu-item">
                     <a href="" class="header__menu-item-link">Services</a>
