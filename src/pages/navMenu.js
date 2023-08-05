@@ -1,11 +1,6 @@
-import { toggleHamburger } from './hamburgerMenuModule.js';
-
 let menuWrapper = document.getElementById('navMenu');
 let navMenu = ` 
-            <div id="hamburger-menu" class="header__hamburger">
-                <i class="las la-bars burger-icon active"></i>
-                <i class="las la-times close-icon"></i>
-            </div>
+        <header class='header'>
             <figure class="header__logo">
                 <img
                     class="header__logo-img"
@@ -34,11 +29,19 @@ let navMenu = `
                     </button>
                 </li>
             </ul>
+            <div id="hamburger-menu" class="header__hamburger">
+                <i class="las la-bars burger-icon active"></i>
+                <i class="las la-times close-icon"></i>
+            </div>
+        </header>
+        <nav class="mobile-nav">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#projects">Projects</a>
+            <a href="../../index.html#services">Services</a>
+        </nav>
         `;
 
 function createNavMenu(wrapper) {
     wrapper.innerHTML = navMenu;
 }
 createNavMenu(menuWrapper);
-
-toggleHamburger();
