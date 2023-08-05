@@ -169,7 +169,7 @@ html {
         }
 
         @include breakpoint($md-screen) {
-            display: none;
+            display: inline-block;
         }
     }
 
@@ -217,15 +217,16 @@ html {
         }
 
         @include breakpoint($md-screen) {
+            display: none;
             flex-direction: column;
-            scale: 0;
+            // scale: 0;
             transition: all ease-in 0.5s;
-            transform: translateY(calc(-100% - 20px));
+            transform: translateX(calc(-100% - 20px));
 
             &.active {
                 display: flex;
                 scale: 1;
-                transform: translateY(0);
+                transform: translateX(0);
                 width: 100%;
                 height: 100%;
                 background-color: $primary;
@@ -284,33 +285,46 @@ html {
         }
 
         @include breakpoint($md-screen) {
-            position: absolute;
-            left: 24px;
-            top: 24px;
             display: inline-block;
         }
     }
+}
 
-    @include breakpoint($md-screen) {
-        position: absolute;
-        display: block;
-        height: $l-space;
-        transition: all 0.4s ease;
+// Mobile navigation
+
+.mobile-nav {
+    position: fixed;
+    left: 100%;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    background-color: hsl(38, 100%, 78%);
+    padding-top: 200px;
+    transition: all 0.4s ease-in;
+
+    &.is-active {
         left: 0;
-        top: 0;
-        z-index: 10;
-
-        &.active {
-            width: 100%;
-            height: 100%;
-        }
     }
+
+    a {
+        display: block;
+        margin: 8px auto;
+        max-width: 250px;
+        padding: 16px;
+        background-color: hsl(38, 90%, 90%);
+        cursor: pointer;
+        text-decoration: none;
+        color: $text-primary;
+        font-weight: 600;
+    }
+
+    @include breakpoint($md-screen);
 }
 
 .section {
     margin: 32px auto;
     padding: 96px 0;
-    // overflow: hidden;
 
     &__heading {
         font-family: $font-secondary;
@@ -581,7 +595,6 @@ html {
     position: relative;
     margin: 48px 0 0;
     @include flex(column, center, center, $fw: wrap, $gap: 0);
-    // padding: 0px $padding-xxl 0;
     background-color: $tertiary;
     width: 100%;
 
