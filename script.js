@@ -48,23 +48,27 @@ let servicesWrapper = document.getElementById('services-wrapper');
 
 let services = [
     {
-        service: 'Corporate Identity',
-        description: 'Logo and brand identity',
+        service: 'Brand Identity',
+        description:
+            'Logo, color palette, fonts, typography, shapes and patterns, consistent styles, brand guidlines',
         content: ['service 1', 'service 2', 'service 3'],
     },
     {
         service: 'Social Media Content',
-        description: 'Social media post and marketing',
+        description:
+            'Social media posts, story templates, post templates, highlight covers',
         content: ['service 5', 'service 6', 'service 7'],
     },
     {
-        service: 'Online Advertising',
-        description: ' Banners, apps and pop-ups',
+        service: 'Online advertising ',
+        description:
+            'Banner ads, thumbnails, pop-ups, app store screenshots,icons, illustrations',
         content: ['service 9', 'service 8', 'service 10'],
     },
     {
-        service: 'Print Advertisments',
-        description: ' Printed advertisments',
+        service: 'Print Advertisements',
+        description:
+            'Packaging, product labels, book covers, business cards, menu, big print items such as posters and billboards',
         content: ['service 11', 'service 12', 'service 13'],
     },
 ];

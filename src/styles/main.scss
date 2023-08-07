@@ -339,7 +339,7 @@ html {
         margin-bottom: 48px;
         &-subtitle {
             @include font($font-secondary, $text-xxl, $weight-bold, 1.5);
-            text-transform: capitalize;
+            text-transform: uppercase;
             text-align: center;
 
             @include breakpoint($sm-screen) {
