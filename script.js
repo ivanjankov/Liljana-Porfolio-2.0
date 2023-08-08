@@ -20,10 +20,10 @@ hamburgerMenu.addEventListener('click', () => {
 
 // Triger Splide Slider
 
-const splide = new Splide('.splide', {
+const splide = new Splide('#projects-splide', {
     type: 'loop',
     perPage: 2,
-    perMove: 1,
+    perMove: 2,
     gap: '12px',
     width: '100%',
     breakpoints: {
@@ -36,6 +36,26 @@ const splide = new Splide('.splide', {
     },
 });
 splide.mount();
+const footerSplide = new Splide('#footer-splide', {
+    type: 'loop',
+    perPage: 1,
+    perMove: 1,
+    gap: '12px',
+    width: '100%',
+    arrows: false,
+    autoplay: true,
+    interval: 5000,
+    pagination: false,
+    breakpoints: {
+        768: {
+            perPage: 2,
+        },
+        576: {
+            perPage: 1,
+        },
+    },
+});
+footerSplide.mount();
 
 // Modal
 

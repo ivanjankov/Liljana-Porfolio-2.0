@@ -610,8 +610,6 @@ html {
     &::before {
         @include wave('wave-black');
         top: -100px;
-        left: -2px;
-        width: 102%;
     }
 
     &__heading {
