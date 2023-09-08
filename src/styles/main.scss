@@ -38,6 +38,10 @@ html {
     background-color: $grey-light;
     overflow: hidden;
 
+    @include breakpoint($lg-screen) {
+        height: 70vh;
+    }
+
     &__section {
         @include flex(row, center, center, null, null);
         justify-content: center;
@@ -55,6 +59,10 @@ html {
 
         &-welcome {
             flex: 1 2 40%;
+
+            @include breakpoint($lg-screen) {
+                flex-basis: 55%;
+            }
         }
         &-text {
             font-size: 2.7rem;
@@ -70,14 +78,24 @@ html {
                 }
             }
 
+            @include breakpoint($xl-screen) {
+                font-size: 36px;
+            }
+            @include breakpoint($lg-screen) {
+                font-size: 33px;
+                max-width: 360px;
+            }
+
             @include breakpoint($md-screen) {
                 font-size: $text-xxl;
                 word-break: keep-all;
                 text-align: center;
+                max-width: 440px;
             }
             @include breakpoint($sm-screen) {
                 flex: 1 1 100%;
                 font-size: $text-xl;
+                max-width: 260px;
             }
         }
 
@@ -90,6 +108,11 @@ html {
             gap: $xs-space;
             margin-top: $m-space;
             cursor: pointer;
+
+            & > svg {
+                height: 16px;
+                width: 16px;
+            }
 
             &:hover {
                 color: $secondary-main;
@@ -104,10 +127,15 @@ html {
                 font-size: $text-md;
                 font-weight: 600;
                 text-transform: uppercase;
+
+                @include breakpoint($md-screen) {
+                    font-size: $text-sm;
+                }
             }
 
             @include breakpoint($md-screen) {
                 margin-inline: auto;
+                margin-top: 8px;
             }
         }
 
@@ -125,6 +153,11 @@ html {
                 object-fit: cover;
             }
 
+            @include breakpoint($lg-screen) {
+                flex-basis: 45%;
+                width: 100%;
+                height: auto;
+            }
             @include breakpoint($md-screen) {
                 display: none;
             }
@@ -408,6 +441,8 @@ html {
                 font-size: $text-xl;
                 font-weight: $weight-bold;
                 color: #fff;
+                margin-top: 8px;
+                line-height: 130%;
 
                 @include breakpoint($sm-screen) {
                 }
@@ -593,16 +628,36 @@ html {
         max-width: 50%;
         margin-inline: auto;
         line-height: 1.25;
+        font-size: 33px;
+        line-height: 135%;
+
+        @include breakpoint($lg-screen) {
+            max-width: 90%;
+            font-size: $text-xl;
+        }
 
         @include breakpoint($md-screen) {
             max-width: 90%;
             font-size: $text-xl;
         }
+        @include breakpoint($sm-screen) {
+            max-width: 90%;
+            font-size: $text-md;
+        }
     }
+
+    @include breakpoint($lg-screen) {
+        padding: 56px;
+    }
+
     button {
         margin-top: $m-space;
         display: block;
         margin-inline: auto;
+
+        @include breakpoint($md-screen) {
+            margin-top: $xs-space;
+        }
     }
 }
 
@@ -700,22 +755,6 @@ html {
             @include font($font-secondary, $text-md, $weight-light, 1.3);
             text-align: center;
             color: $white;
-
-            &:before {
-                position: absolute;
-                content: '„';
-                font-size: $text-lg;
-                padding-right: $padding-xs;
-                top: 0px;
-                left: 0px;
-            }
-            &:after {
-                position: absolute;
-                content: '”';
-                font-size: $text-lg;
-                padding-left: $padding-xs;
-                bottom: 0px;
-            }
 
             @include breakpoint($md-screen) {
                 font-size: $text-base;
