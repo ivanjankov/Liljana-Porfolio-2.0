@@ -258,3 +258,12 @@ function populariseModal(serviceContent) {
             '<p class="other-services">At this time, I do not provide fixed packages for this service. To get a customized price estimate, kindly fill out the enquiry form with a thorough description of your requirements. Upon receipt, I will promptly respond with a tailored quote that meets your needs.</p>';
     }
 }
+
+// Check project hero section
+
+const checkProjectsBtn = document.querySelector('.hero__section-btn-projects');
+const projectSection = document.getElementById('projects');
+
+checkProjectsBtn.addEventListener('click', () => {
+    projectSection.scrollIntoView();
+});
