@@ -571,6 +571,13 @@ body {
         &.active {
             display: flex;
             top: 0px;
+
+            @include breakpoint($md-screen) {
+                top: 8px;
+                bottom: 8px;
+                overflow: scroll;
+                height: auto;
+            }
         }
 
         &_first-service {
