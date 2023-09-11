@@ -196,6 +196,10 @@ body {
   height: auto;
 }
 
+a {
+  color: #333333;
+}
+
 .main {
   font-family: "Raleway", sans-serif;
   height: auto;
@@ -310,6 +314,7 @@ body {
   gap: 8px;
   margin-top: 24px;
   cursor: pointer;
+  color: #333333;
 }
 .hero__section-btn-projects > svg {
   height: 16px;
@@ -509,6 +514,7 @@ body {
   font-size: 1.125rem;
   color: #ffe5b8;
   font-weight: 600;
+  font-family: "Raleway", sans-serif;
 }
 @media (max-width: 992px) {
   .header__button-link {
@@ -756,6 +762,17 @@ body {
 .services .modal_content-services {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+}
+@media (max-width: 576px) {
+  .services .modal_content-services {
+    overflow: scroll;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .services .modal_content {
+    height: 98vh;
+  }
 }
 .services .modal-list {
   margin-bottom: auto;
@@ -1113,6 +1130,7 @@ body {
   position: fixed;
   right: 80px;
   bottom: 40px;
+  font-family: "Raleway", sans-serif;
 }
 .next-project:hover a {
   width: 150px;

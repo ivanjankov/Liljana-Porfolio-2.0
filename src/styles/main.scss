@@ -13,6 +13,10 @@ body {
     height: auto;
 }
 
+a {
+    color: $text-primary;
+}
+
 .main {
     // padding-inline: calc((100vw - $container-width) / 2);
     font-family: $font-secondary;
@@ -112,6 +116,7 @@ body {
             gap: $xs-space;
             margin-top: $m-space;
             cursor: pointer;
+            color: $text-primary;
 
             & > svg {
                 height: 16px;
@@ -295,6 +300,7 @@ body {
             font-size: $text-md;
             color: $primary;
             font-weight: $weight-semibold;
+            font-family: $font-primary;
 
             @include breakpoint($lg-screen) {
                 font-size: $text-base;
@@ -527,6 +533,15 @@ body {
             &-services {
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
+
+                @include breakpoint($sm-screen) {
+                    overflow: scroll;
+                    height: 100%;
+                }
+            }
+
+            @include breakpoint($sm-screen) {
+                height: 98vh;
             }
         }
 
@@ -847,6 +862,7 @@ body {
     position: fixed;
     right: 80px;
     bottom: 40px;
+    font-family: $font-primary;
 
     &:hover {
         a {
