@@ -44,12 +44,12 @@ const footerSplide = new Splide('#footer-splide', {
     gap: '12px',
     width: '100%',
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     interval: 5000,
     pagination: false,
     breakpoints: {
         768: {
-            perPage: 2,
+            perPage: 1,
         },
         576: {
             perPage: 1,
