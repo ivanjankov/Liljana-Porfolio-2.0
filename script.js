@@ -26,6 +26,7 @@ const splide = new Splide('#projects-splide', {
     perMove: 2,
     gap: '12px',
     width: '100%',
+    speed: 2500,
     breakpoints: {
         768: {
             perPage: 2,
@@ -48,7 +49,7 @@ const footerSplide = new Splide('#footer-splide', {
     pagination: false,
     breakpoints: {
         768: {
-            perPage: 2,
+            perPage: 1,
         },
         576: {
             perPage: 1,
